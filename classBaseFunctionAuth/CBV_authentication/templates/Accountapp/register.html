@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>registration</title>
+{% endblock %}
+
+
+{% block body %}
+
+<div style="background-color:perl white;margin-top:10px">
+    <div class="container" style="text-align:center;width:50%" >
+
+    <form method="POST" class="jumbotron">
+        <h2>Register Here</h2>
+ {% csrf_token %}
+
+    {{form|crispy}}
+    <br>
+    <button class="btn btn-success">Submit</button>
+</form>
+</div>
+</div>
+{% endblock %}

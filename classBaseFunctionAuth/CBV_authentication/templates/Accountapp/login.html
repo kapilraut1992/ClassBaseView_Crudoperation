@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>login Page</title>
+{% endblock %}
+
+
+{% block body %}
+<form method="POST">
+    {% csrf_token %}
+
+    <label for="usename">Username</label>
+    <input id="usename" type="text" name="usename"><br><br>
+
+    <label for="passw">Password</label>
+    <input id="passw" type="password" name="passw">
+    {% for msg in messsages %}
+<p style="color:red">{{msg}} </p>
+    {% endfor %}
+    <br>
+<button>Submit</button>
+</form>
+{% endblock %}

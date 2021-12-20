@@ -1,0 +1,41 @@
+
+{% extends 'layout.html' %}
+{% load crispy_forms_tags
+{% block title %}
+    <title>laptop table</title>
+    {% endblock %}
+{% block body %}
+<h2 style="text-align:center"><b>Laptop Details Info Table</b></h2>
+<div class="container" style="text-align:center">
+
+    <table class="table table-success table-striped" style="width:75%;margin-left:75px">
+    <tr>
+        <th>Model Name</th>
+        <th>RAM</th>
+        <th>ROM</th>
+        <th>PROCESSOR</th>
+        <th>PRICE</th>
+        <th>WEIGHT</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
+    </tr>
+    {% for lap in lap_list %}
+<tr>
+    <td>{{lap.model_name}}</td>
+    <td>{{lap.ram}}</td>
+    <td>{{lap.rom}}</td>
+    <td>{{lap.processor}}</td>
+    <td>{{lap.price}}</td>
+    <td>{{lap.weight}}</td>
+    <td>
+        <a href="{% url 'updatedata' lap.id %}"><button class="btn btn-outline-success" >Update</button></a>
+    </td>
+    <td>
+        <a href="{% url 'deletedata' lap.id %}"><button class="btn btn-outline-danger">Delete</button></a>
+    </td>
+</tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

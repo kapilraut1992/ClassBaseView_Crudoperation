@@ -1,0 +1,9 @@
+.mynavbar{
+background-color:aqua;
+list-style-type:none;
+margin:0
+padding:0
+}
+li a{
+text-decoration:None;
+}
